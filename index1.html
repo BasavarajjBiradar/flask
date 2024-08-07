@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+   <style>
+   .clock {
+  font-size: 3rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+   </style>
+   <script>
+    function showTime() {
+  const time = new Date();
+  let hours = time.getHours();
+  let minutes = time.getMinutes();
+  let seconds = time.getSeconds();
+
+  // Add leading zeros if necessary
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  document.querySelector(".hours").textContent = hours;
+  document.querySelector(".minutes").textContent = minutes;
+  document.querySelector(".seconds").textContent = seconds;
+}
+
+setInterval(showTime, 1000);
+
+   </script>
+</head>
+
+<body>
+    <div class="clock">
+        <span class="hours"></span>
+        <span class="colon">:</span>
+        <span class="minutes"></span>
+        <span class="colon">:</span>
+        <span class="seconds"></span>
+      </div>
+      
+</body>
+
+</html>
+    
+  
